@@ -1,6 +1,6 @@
 {
   "name": "@0xc/msteams-samesite-compatibility-validator",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Validates whether a Teams UserAgent is compatible with SameSite=None cookies",
   "private": false,
   "main": "dist/index.js",
@@ -33,6 +33,7 @@
   "author": "Tom Carrio <tom@carrio.dev>",
   "devDependencies": {
     "@types/jest": "25.1.0",
+    "@types/node": "^12.12.27",
     "jest": "^25.1.0",
     "jest-junit": "^10.0.0",
     "nodemon": "^2.0.2",
