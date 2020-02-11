@@ -1,6 +1,6 @@
 const lowerIncompatibleVersion = 51;
 const compatibleVersion = 67;
-const teamsChromePattern = /Teams\/[\d\.]+ Chrome\/([\d\.]+)/;
+const teamsChromePattern = /(Teams|MicrosoftTeams-Insiders)\/[\d\.]+ Chrome\/([\d\.]+)/;
 
 /**
  * Checks whether the UserAgent matches a Microsoft Teams desktop clients
@@ -25,7 +25,7 @@ export function incompatible(userAgent: string) {
 
   let teamsVersion = 0;
   try {
-    let majorVersion = match[1].split(".")[0];
+    let majorVersion = match[2].split(".")[0];
     teamsVersion = parseInt(majorVersion);
   } catch (err) {
     return false;
