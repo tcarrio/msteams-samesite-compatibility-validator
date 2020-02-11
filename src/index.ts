@@ -13,7 +13,7 @@ const teamsChromePattern = /(Teams|MicrosoftTeams-Insiders)\/[\d\.]+ Chrome\/([\
  * that are not known may fall through, this was based on testing with
  * macOS, Windows, and Linux clients for Microsoft Teams.
  */
-export function incompatible(userAgent: string) {
+export function incompatible(userAgent?: string | null) {
   if (!userAgent) {
     return false;
   }

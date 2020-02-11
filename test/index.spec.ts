@@ -70,5 +70,13 @@ describe("User Agent Tests", () => {
     it("should not assume incompatibility with empty UserAgents", () => {
       expect(incompatible(emptyUserAgent)).toBe(false);
     });
+
+    it("should allow undefined input", () => {
+      expect(incompatible(undefined)).toBe(false);
+    })
+
+    it("should allow null input", () => {
+      expect(incompatible(null)).toBe(false);
+    })
   });
 });
