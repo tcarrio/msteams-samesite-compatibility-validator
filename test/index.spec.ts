@@ -24,6 +24,8 @@ const linuxInsiders =
 
 const invalidUserAgent = "lkjasbz908zZK idfk man";
 const emptyUserAgent = "";
+const undefinedUserAgent = undefined;
+const nullUserAgent = null;
 
 describe("User Agent Tests", () => {
   describe("Updated Clients", () => {
@@ -71,12 +73,12 @@ describe("User Agent Tests", () => {
       expect(incompatible(emptyUserAgent)).toBe(false);
     });
 
-    it("should allow undefined input", () => {
-      expect(incompatible(undefined)).toBe(false);
+    it("should not assume incompatibility with undefined UserAgents", () => {
+      expect(incompatible(undefinedUserAgent)).toBe(false);
     })
 
-    it("should allow null input", () => {
-      expect(incompatible(null)).toBe(false);
+    it("should not assume incompatibility with null UserAgents", () => {
+      expect(incompatible(nullUserAgent)).toBe(false);
     })
   });
 });
