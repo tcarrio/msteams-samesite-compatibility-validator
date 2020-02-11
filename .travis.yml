@@ -1,0 +1,20 @@
+language: node_js
+version: "= 1.0"
+os:
+  - linux
+
+node_js:
+  - 12
+
+before_install:
+  - printf "//registry.npmjs.org/:_authToken=${NPM_TOKEN}" > ~/.npmrc
+  - npm ci
+  - npm run build
+
+deploy:
+  provider: npm
+  email: tom@carrio.dev
+  api_key: ${NPM_TOKEN}
+  edge: true
+  on:
+    branch: master
