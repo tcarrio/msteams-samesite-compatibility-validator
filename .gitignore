@@ -1,0 +1,12 @@
+lib/
+dist/
+node_modules/
+.vscode/
+lerna-debug.log
+npm-debug.log
+test-results.xml
+junit.xml
+.maverick
+.env
+docker-compose.yml
+*.code-workspace

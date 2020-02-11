@@ -1,0 +1,44 @@
+{
+  "name": "@0xc/msteams-samesite-compatibility-validator",
+  "version": "0.1.0",
+  "description": "Validates whether a Teams UserAgent is compatible with SameSite=None cookies",
+  "private": false,
+  "main": "dist/index.js",
+  "scripts": {
+    "start": "node dist/index.js",
+    "start-ts": "ts-node src/index.ts",
+    "start:dev": "TS_NODE_TRANSPILE_ONLY=true TS_NODE_FILES=true nodemon --nolazy -r ts-node/register --inspect=0.0.0.0:23001 -e ts,js,json,md --watch src src/index.ts",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint src/**/*.ts",
+    "build": "tsc",
+    "prebuild:prod": "[ -d dist ] && rm -rf dist || true",
+    "build:prod": "tsc -p tsconfig.prod.json",
+    "postbuild:prod": "[ -f dist/index.js ]",
+    "prepare": "npm run build:prod",
+    "test": "jest"
+  },
+  "files": [
+    "dist/*"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tcarrio/msteams-samesite-compatibility-validator.git"
+  },
+  "keywords": [
+    "Microsoft",
+    "Teams",
+    "Chromium",
+    "UserAgent"
+  ],
+  "author": "Tom Carrio <tom@carrio.dev>",
+  "devDependencies": {
+    "@types/jest": "25.1.0",
+    "jest": "^25.1.0",
+    "jest-junit": "^10.0.0",
+    "nodemon": "^2.0.2",
+    "prettier": "^1.19.1",
+    "ts-jest": "^25.0.0",
+    "typescript": "3.7.5"
+  },
+  "dependencies": {}
+}
